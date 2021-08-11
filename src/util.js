@@ -44,7 +44,7 @@ export function eventTitleFromProfile(eventProfile, strings) {
   const families = eventProfile?.participants?.families.filter((obj) => obj.role === family) || []
   const primaryPeople = `${people.map((obj) => personTitleFromProfile(obj.person)).join(', ')}
           ${families.map((obj) => familyTitleFromProfile(obj.family)).join(', ')}`
-  return html`${eventProfile.type}${primaryPeople.trim() ? `: ${primaryPeople}` : ''}${eventProfile.date ? ` (${eventProfile.date})` : ''}`
+  return html`${eventProfile.type}${eventProfile.description}${eventProfile.date ? ` (${eventProfile.date})` : ''}`
 }
 
 
